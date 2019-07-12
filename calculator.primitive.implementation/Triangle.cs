@@ -1,10 +1,19 @@
 namespace calculator.primitive.implementation
 {
-    public class Triangle : FigureBase<float>
+    public class Triangle<TMeasure> : FigureBase<TMeasure>
     {
-        public override float GetArea()
+        private readonly AreaContextBase<TMeasure> _areaContext;
+        private readonly AreaComputeStrategyBase<TMeasure> _areaComputeStrategy;
+
+        public Triangle(AreaContextBase<TMeasure> areaContext, AreaComputeStrategyBase<TMeasure> areaComputeStrategy)
         {
-            throw new System.NotImplementedException();
+            _areaContext = areaContext;
+            _areaComputeStrategy = areaComputeStrategy;
+        }
+        
+        public override TMeasure GetArea()
+        {
+            return _areaComputeStrategy.ComputeTriangleArea(_areaContext);
         }
     }
 }

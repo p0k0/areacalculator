@@ -2,15 +2,20 @@
 
 namespace calculator.primitive.implementation
 {
-    public class Circle<TMeasure> : FigureBase<TMeasure>
+    public class Ellipse<TMeasure> : FigureBase<TMeasure>
     {
-        public Circle()
+        private readonly AreaContextBase<TMeasure> _areaContext;
+        private readonly AreaComputeStrategyBase<TMeasure> _areaComputeStrategy;
+
+        public Ellipse(AreaContextBase<TMeasure> areaContext, AreaComputeStrategyBase<TMeasure> areaComputeStrategy)
         {
-            
+            _areaContext = areaContext;
+            _areaComputeStrategy = areaComputeStrategy;
         }
+        
         public override TMeasure GetArea()
         {
-            throw new NotImplementedException();
+            return _areaComputeStrategy.ComputeEllipseArea(_areaContext);
         }
     }
 }
