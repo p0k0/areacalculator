@@ -2,8 +2,8 @@
 
 namespace calculator.primitive
 {
-    public abstract class FigureBase
+    public abstract class FigureBase<MeasureType>
     {
-        public double GetArea();
+        public MeasureType GetArea();
     }
 }
