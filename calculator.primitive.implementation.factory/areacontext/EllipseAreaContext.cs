@@ -6,7 +6,7 @@ namespace calculator.primitive.implementation.factory.areacontext
     {
         public EllipseAreaContext(TMeasure a, TMeasure b)
         {
-            this.Measure = new List<TMeasure>{ a, b };
+            this.Measure = new List<TMeasure>(2){ a, b };
         }
     }
 }

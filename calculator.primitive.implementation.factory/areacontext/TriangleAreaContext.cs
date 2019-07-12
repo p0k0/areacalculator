@@ -6,7 +6,7 @@ namespace calculator.primitive.implementation.factory.areacontext
     {
         public TriangleAreaContext(TMeasure a, TMeasure b, TMeasure c)
         {
-            this.Measure = new List<TMeasure>{ a, b, c };
+            this.Measure = new List<TMeasure>(3){ a, b, c };
         }
     }
 }
