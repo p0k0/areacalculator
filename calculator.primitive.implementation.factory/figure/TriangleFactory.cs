@@ -1,12 +1,21 @@
-using System;
+using calculator.compute.strategy;
+using calculator.primitive.implementation.factory.areacontext;
 
 namespace calculator.primitive.implementation.factory.figure
 {
-    public class EllipseFactory<TMeasure> : FigureFactory<TMeasure>
+    public class TriangleFactory : FigureFactory<double>
     {
-        public override FigureBase<TMeasure> CreateCircle(TMeasure radius)
+        public TriangleFactory()
         {
-            return new Ellipse<TMeasure>();
+            _areaContextFactory = new TriangleAreaContextFactory<double>();
+            _areaComputeStrategyFactory = new DoublePrecisionAreaComputeStrategyFactory();
+        }
+        
+        public override FigureBase<double> CreateTriangle(double a, double b, double c)
+        {
+            return new Triangle<double>(
+                _areaContextFactory.CreateTriangleAreaContext(a, b, c),
+                _areaComputeStrategyFactory.CreateTriangleComputeStrategy());
         }
     }
 }

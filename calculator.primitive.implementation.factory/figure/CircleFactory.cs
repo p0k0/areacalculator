@@ -1,12 +1,20 @@
-using System;
+using calculator.compute.strategy;
+using calculator.primitive.implementation.factory.areacontext;
 
 namespace calculator.primitive.implementation.factory.figure
 {
-    public class CircleFigureFactory<TMeasure> : FigureFactory<TMeasure>
+    public class CircleFigureFactory : FigureFactory<double>
     {
-        public override FigureBase<TMeasure> CreateCircle(TMeasure radius)
+        public CircleFigureFactory()
         {
-            return new Circle<TMeasure>();
+            _areaContextFactory = new CircleAreaContextFactory<double>();
+            _areaComputeStrategyFactory = new DoublePrecisionAreaComputeStrategyFactory();
+        }
+        public override FigureBase<double> CreateCircle(double radius)
+        {
+            return new Circle<double>(
+                _areaContextFactory.CreateCircleAreaContext(radius),
+                _areaComputeStrategyFactory.CreateCircleComputeStrategy());
         }
     }
 }

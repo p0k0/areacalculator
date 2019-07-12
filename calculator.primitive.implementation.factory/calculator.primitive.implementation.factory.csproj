@@ -5,11 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="figure" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\calculator.primitive\calculator.primitive.csproj" />
+    <ProjectReference Include="..\calculator.primitive.implementation\calculator.primitive.implementation.csproj" />
+    <ProjectReference Include="..\calculator.compute.strategy\calculator.compute.strategy.csproj" />
   </ItemGroup>
 
 </Project>

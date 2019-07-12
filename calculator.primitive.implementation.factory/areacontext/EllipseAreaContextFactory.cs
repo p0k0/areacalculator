@@ -1,7 +1,4 @@
-﻿using System;
-using calculator.primitive.implementation.factory.areacontext;
-
-namespace calculator.primitive.implementation.factory
+﻿namespace calculator.primitive.implementation.factory.areacontext
 {
     public class EllipseAreaContextFactory<TMeasure> : AreaContextFactory<TMeasure>
     {
