@@ -2,7 +2,7 @@ using System;
 
 namespace calculator.primitive
 {
-    public class AreaComputeStrategyBase<TMeasure>
+    public class AreaComputeStrategy<TMeasure>
     {
         public virtual TMeasure ComputeCircleArea(AreaContextBase<TMeasure> areaContextBase)
         {

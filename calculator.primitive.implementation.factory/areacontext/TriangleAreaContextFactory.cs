@@ -1,4 +1,6 @@
-﻿namespace calculator.primitive.implementation.factory.areacontext
+﻿using calculator.primitive.implementation.areacontext;
+
+namespace calculator.primitive.implementation.factory.areacontext
 {
     public class TriangleAreaContextFactory<TMeasure> : AreaContextFactory<TMeasure>
     {

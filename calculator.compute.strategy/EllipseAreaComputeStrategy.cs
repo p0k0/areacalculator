@@ -4,7 +4,7 @@ using calculator.primitive;
 
 namespace calculator.compute.strategy
 {
-    public class EllipseAreaComputeStrategy : AreaComputeStrategyBase<double>
+    public class EllipseAreaComputeStrategy : AreaComputeStrategy<double>
     {
         public override double ComputeEllipseArea(AreaContextBase<double> areaContextBase)
         {

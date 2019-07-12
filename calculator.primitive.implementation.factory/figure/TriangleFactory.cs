@@ -1,5 +1,6 @@
 using calculator.compute.strategy;
 using calculator.primitive.implementation.factory.areacontext;
+using calculator.primitive.implementation.factory.strategy;
 
 namespace calculator.primitive.implementation.factory.figure
 {

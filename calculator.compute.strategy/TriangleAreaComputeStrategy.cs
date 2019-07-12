@@ -4,7 +4,7 @@ using calculator.primitive;
 
 namespace calculator.compute.strategy
 {
-    public class TriangleAreaComputeStrategy : AreaComputeStrategyBase<double>
+    public class TriangleAreaComputeStrategy : AreaComputeStrategy<double>
     {
         public override double ComputeTriangleArea(AreaContextBase<double> areaContextBase)
         {

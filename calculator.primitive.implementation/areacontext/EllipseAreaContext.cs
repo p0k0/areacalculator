@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace calculator.primitive.implementation.factory.areacontext
+namespace calculator.primitive.implementation.areacontext
 {
     public class EllipseAreaContext<TMeasure> : AreaContextBase<TMeasure>
     {

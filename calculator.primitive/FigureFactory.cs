@@ -5,7 +5,7 @@ namespace calculator.primitive
     public class FigureFactory<TMeasure>
     {
         protected AreaContextFactory<TMeasure> _areaContextFactory;
-        protected AreaComputeStrategyFactoryBase<TMeasure> _areaComputeStrategyFactory;
+        protected AreaComputeStrategyFactory<TMeasure> _areaComputeStrategyFactory;
         
         public virtual FigureBase<TMeasure> CreateCircle(TMeasure radius)
         {

@@ -5,9 +5,9 @@ namespace calculator.primitive.implementation
     public class Ellipse<TMeasure> : FigureBase<TMeasure>
     {
         private readonly AreaContextBase<TMeasure> _areaContext;
-        private readonly AreaComputeStrategyBase<TMeasure> _areaComputeStrategy;
+        private readonly AreaComputeStrategy<TMeasure> _areaComputeStrategy;
 
-        public Ellipse(AreaContextBase<TMeasure> areaContext, AreaComputeStrategyBase<TMeasure> areaComputeStrategy)
+        public Ellipse(AreaContextBase<TMeasure> areaContext, AreaComputeStrategy<TMeasure> areaComputeStrategy)
         {
             _areaContext = areaContext;
             _areaComputeStrategy = areaComputeStrategy;

@@ -4,7 +4,7 @@ using calculator.primitive;
 
 namespace calculator.compute.strategy
 {
-    public class CircleAreaComputeStrategy : AreaComputeStrategyBase<double>
+    public class CircleAreaComputeStrategy : AreaComputeStrategy<double>
     {
         public override double ComputeCircleArea(AreaContextBase<double> areaContextBase)
         {

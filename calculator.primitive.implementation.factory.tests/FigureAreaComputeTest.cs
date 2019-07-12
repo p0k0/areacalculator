@@ -9,13 +9,11 @@ namespace calculator.primitive.implementation.factory.tests
     public class FigureAreaComputeTest
     {
         private Fixture _fixture;
-        private Random _random;
         
         public FigureAreaComputeTest()
         {
             _fixture = new Fixture();
             _fixture.Customizations.Add(new RandomRangedNumberGenerator());
-            _random = new Random(DateTime.UtcNow.Millisecond);
         }
         
         [DataTestMethod]
@@ -60,13 +58,13 @@ namespace calculator.primitive.implementation.factory.tests
             var factory = new TriangleFactory();
             var a = _fixture.Create<double>();
             var b = _fixture.Create<double>();
-            var c = (a + b) * (_random.Next(1, 1000) / 1000d); // a + b < c
+            var c = (a + b) * 0.7; // a + b < c
             var p = (a + b + c) / 2d;
             var triangle = factory.CreateTriangle(a, b, c);
             var expected = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
             var result = triangle.GetArea();
             var diff = expected - result;
-            diff = diff * Math.Sign(diff);
+            diff = diff * diff;
             
             Assert.IsTrue( diff <= precision);
         }
