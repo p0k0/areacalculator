@@ -1,3 +1,6 @@
+using System.Linq;
+using calculator.primitive.implementation.areacontext;
+
 namespace calculator.primitive.implementation
 {
     public class Triangle<TMeasure> : FigureBase<TMeasure>
@@ -14,6 +17,14 @@ namespace calculator.primitive.implementation
         public override TMeasure GetArea()
         {
             return _areaComputeStrategy.ComputeTriangleArea(_areaContext);
+        }
+
+        public bool HasRightAngle()
+        {
+            var areaContext = _areaContext as TriangleAreaContext<double>;
+            return areaContext.Measure.ToList().Any(side => 
+                areaContext.Measure.Where(otherSide => otherSide != side)
+                    .Aggregate(0d, (acc, val) => acc += (val * val)) == side * side );
         }
     }
 }
