@@ -1,7 +1,7 @@
 namespace calculator.primitive
 {
-    public abstract class CalculationStrategyBase<MeasureType>
+    public abstract class CalculationStrategyBase<TMeasure>
     {
-        public abstract MeasureType Calculate(AreaContextBase<MeasureType> areaContextBase);
+        public abstract TMeasure Calculate(AreaContextBase<TMeasure> areaContextBase);
     }
 }

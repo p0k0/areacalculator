@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace calculator.primitive
 {
-    public abstract class AreaContextBase<MeasureType>
+    public abstract class AreaContextBase<TMeasure>
     {
-        public IList<MeasureType> Measure { get; set; }
+        public IList<TMeasure> Measure { get; set; }
     }
 }
