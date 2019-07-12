@@ -1,7 +1,22 @@
+using System;
+
 namespace calculator.primitive
 {
-    public abstract class AreaComputeStrategyBase<TMeasure>
+    public class AreaComputeStrategyBase<TMeasure>
     {
-        public abstract TMeasure Compute(AreaContextBase<TMeasure> areaContextBase);
+        public virtual TMeasure ComputeCircleArea(AreaContextBase<TMeasure> areaContextBase)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public virtual TMeasure ComputeEllipseArea(AreaContextBase<TMeasure> areaContextBase)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public virtual TMeasure ComputeTriangleArea(AreaContextBase<TMeasure> areaContextBase)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

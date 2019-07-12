@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace calculator.primitive.implementation.factory
+namespace calculator.primitive
 {
-    public abstract class AreaContextFactory<TMeasure>
+    public class AreaContextFactory<TMeasure>
     {
         public virtual AreaContextBase<TMeasure> CreateCircleAreaContext(TMeasure radius)
         {
