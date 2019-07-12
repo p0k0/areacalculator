@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Linq;
 using calculator.primitive;
 
 namespace calculator.compute.strategy
 {
-    public class CircleAreaComputeStrategy<TMeasure> : AreaComputeStrategyBase<TMeasure>
+    public class CircleAreaComputeStrategy : AreaComputeStrategyBase<double>
     {
-        public override TMeasure Compute(AreaContextBase<TMeasure> areaContextBase)
+        public override double ComputeCircleArea(AreaContextBase<double> areaContextBase)
         {
-            throw new NotImplementedException();
+            return areaContextBase.Measure[0] * areaContextBase.Measure[0] * Math.PI;
         }
     }
 }

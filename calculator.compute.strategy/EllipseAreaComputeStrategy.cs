@@ -4,11 +4,11 @@ using calculator.primitive;
 
 namespace calculator.compute.strategy
 {
-    public class CircleAreaComputeStrategy : AreaComputeStrategyBase<double>
+    public class EllipseAreaComputeStrategy : AreaComputeStrategyBase<double>
     {
-        public override double ComputeCircleArea(AreaContextBase<double> areaContextBase)
+        public override double ComputeEllipseArea(AreaContextBase<double> areaContextBase)
         {
-            return areaContextBase.Measure[0] * areaContextBase.Measure[0] * Math.PI;
+            return areaContextBase.Measure[0] * areaContextBase.Measure[1] * Math.PI;
         }
     }
 }
