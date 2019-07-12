@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.primitive.implem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.compute.strategy", "calculator.compute.strategy\calculator.compute.strategy.csproj", "{D111A8E4-5F29-4BCF-A7A9-76F7D594502A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculator.primitive.implementation.factory", "calculator.primitive.implementation.factory\calculator.primitive.implementation.factory.csproj", "{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{D111A8E4-5F29-4BCF-A7A9-76F7D594502A}.Release|x64.Build.0 = Release|Any CPU
 		{D111A8E4-5F29-4BCF-A7A9-76F7D594502A}.Release|x86.ActiveCfg = Release|Any CPU
 		{D111A8E4-5F29-4BCF-A7A9-76F7D594502A}.Release|x86.Build.0 = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|x64.Build.0 = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F783C11A-A8F6-42EF-BEB1-420D4FAC226E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
