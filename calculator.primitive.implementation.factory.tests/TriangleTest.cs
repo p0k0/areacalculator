@@ -20,6 +20,7 @@ namespace calculator.primitive.implementation.factory.tests
             var a = 3d;
             
             var b = 4d;
+            
             var c = 5d;
             var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
             var pythagoreanTheorem = new VisitorTheoremBackPythagorean(1e-2);
