@@ -27,6 +27,15 @@ namespace calculator.primitive
         {
             visitorTheorem.Visit(this);
         }
+
+        public bool HasRightAngle()
+        {
+            var visitor1 = new VisitorTheoremBackPythagorean(1e-3);
+            var visitor2 = new VisitorTheoremByInnerOuterRadius(1e-3);
+            Accept(visitor2);
+            Accept(visitor1);
+            return visitor2.IsConfirmed || visitor1.IsConfirmed;
+        }
         
         private double _a;
         private double _b;
