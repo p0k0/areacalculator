@@ -16,6 +16,7 @@ namespace calculator.primitive.implementation.factory.tests
         [TestMethod]
         public void Should_VisitorIsConfirmedBeTrue_When_TriangleAcceptVisitorTheoremBackPythagorean()
         {
+            
             var a = 3d;
             var b = 4d;
             var c = 5d;
