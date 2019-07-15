@@ -7,7 +7,6 @@ namespace calculator.primitive.implementation.factory.tests
     public class TriangleTest
     {
         private FigureFactory _figureFactoryfactory;
-        private double _tolerance = 1e-5;
 
         public TriangleTest()
         {

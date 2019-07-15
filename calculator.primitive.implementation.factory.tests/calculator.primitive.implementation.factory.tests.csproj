@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\calculator.primitive.implementation.factory\calculator.primitive.implementation.factory.csproj" />
+    <ProjectReference Include="..\calculator.primitive\calculator.primitive.csproj" />
   </ItemGroup>
+
 
 </Project>
