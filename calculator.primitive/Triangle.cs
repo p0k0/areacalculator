@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace calculator.primitive
 {
-    public class Triangle : IFigure
+    public class Triangle : IFigure, IHasRightAngle
     {
         private double _a;
         private double _b;
@@ -22,11 +22,11 @@ namespace calculator.primitive
             return Math.Sqrt(p * (p - _a) * (p - _b) * (p - _c));
         }
 
-        public bool HasRightAngle(double tolerance)
+        public bool HasRightAngle(double tolerance = 0)
         {
             var side = new[] {_a, _b, _c};
             var quads = side.Select(_ => _ * _).ToList();
-            return quads.Any(quad => Math.Abs(quads.Except(new []{ quad }).Sum( s => s * s) - quad * quad) < tolerance );
+            return quads.Any(quad => Math.Abs(quads.Except(new []{ quad }).Sum( s => s * s) - quad * quad) <= tolerance );
         }
     }
 }
