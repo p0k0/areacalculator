@@ -1,35 +1,39 @@
-using calculator.primitive.implementation.factory.figure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 
 namespace calculator.primitive.implementation.factory.tests
 {
     [TestClass]
     public class TriangleTest
     {
+        private FigureFactory _figureFactoryfactory;
+        private double _tolerance = 1e-5;
+
+        public TriangleTest()
+        {
+            _figureFactoryfactory = new FigureFactory();
+        }
+        
         [TestMethod]
         public void Should_TriangleHasRightAngleReturnTrue_When_TriangleHasRightAngle()
         {
-            var factory = new TriangleFactory();
             var a = 3d;
             var b = 4d;
             var c = 5d;
-            var triangle = factory.CreateTriangle(a, b, c) as Triangle<double>;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
             
-            Assert.IsTrue(triangle.HasRightAngle());
+            Assert.IsTrue(triangle.HasRightAngle(_tolerance));
         }
         
         [TestMethod]
         public void Should_TriangleHasRightAngleReturnFalse_When_TriangleNotHasRightAngle()
         {
-            var factory = new TriangleFactory();
             var a = 4d;
             var b = 4d;
             var c = 4d;
-            var triangle = factory.CreateTriangle(a, b, c) as Triangle<double>;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c) as Triangle;
             
             
-            Assert.IsFalse(triangle.HasRightAngle());
+            Assert.IsFalse(triangle.HasRightAngle(_tolerance));
         }
     }
 }
