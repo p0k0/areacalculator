@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using calculator.primitive.visitors;
 
 namespace calculator.primitive
 {
@@ -22,9 +23,9 @@ namespace calculator.primitive
             return Math.Sqrt(p * (p - _a) * (p - _b) * (p - _c));
         }
 
-        public void Accept(VisitorHasRightAngle visitorHasRightAngle)
+        public void Accept(VisitorTheorem visitorTheorem)
         {
-            visitorHasRightAngle.HasRightAngle(this);
+            visitorTheorem.Visit(this);
         }
         
         private double _a;
