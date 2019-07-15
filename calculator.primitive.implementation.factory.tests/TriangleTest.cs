@@ -20,8 +20,10 @@ namespace calculator.primitive.implementation.factory.tests
             var b = 4d;
             var c = 5d;
             var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var visitorTheorem = new PythagoreanTheorem(1e-2);
+            triangle.Accept(visitorTheorem);
             
-            Assert.IsTrue(triangle.HasRightAngle(_tolerance));
+            Assert.IsTrue(visitorTheorem.IsConfirmed);
         }
         
         [TestMethod]
@@ -30,10 +32,11 @@ namespace calculator.primitive.implementation.factory.tests
             var a = 4d;
             var b = 4d;
             var c = 4d;
-            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c) as Triangle;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var visitorTheorem = new PythagoreanTheorem(1e-2);
+            triangle.Accept(visitorTheorem);
             
-            
-            Assert.IsFalse(triangle.HasRightAngle(_tolerance));
+            Assert.IsFalse(visitorTheorem.IsConfirmed);
         }
     }
 }

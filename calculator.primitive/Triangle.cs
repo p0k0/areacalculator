@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace calculator.primitive
 {
-    public class Triangle : IFigure, IHasRightAngle
+    public class Triangle : IFigure
     {
-        private double _a;
-        private double _b;
-        private double _c;
+        public double A => _a;
+        public double B => _b;
+        public double C => _c;
 
         public Triangle(double a, double b, double c)
         {
@@ -22,11 +22,13 @@ namespace calculator.primitive
             return Math.Sqrt(p * (p - _a) * (p - _b) * (p - _c));
         }
 
-        public bool HasRightAngle(double tolerance = 0)
+        public void Accept(VisitorHasRightAngle visitorHasRightAngle)
         {
-            var side = new[] {_a, _b, _c};
-            var quads = side.Select(_ => _ * _).ToList();
-            return quads.Any(quad => Math.Abs(quads.Except(new []{ quad }).Sum( s => s * s) - quad * quad) <= tolerance );
+            visitorHasRightAngle.HasRightAngle(this);
         }
+        
+        private double _a;
+        private double _b;
+        private double _c;
     }
 }
