@@ -1,35 +1,56 @@
-using calculator.primitive.implementation.factory.figure;
+using calculator.primitive.visitors;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 
 namespace calculator.primitive.implementation.factory.tests
 {
     [TestClass]
     public class TriangleTest
     {
-        [TestMethod]
-        public void Should_TriangleHasRightAngleReturnTrue_When_TriangleHasRightAngle()
+        private FigureFactory _figureFactoryfactory;
+        private double _tolerance = 1e-5;
+
+        public TriangleTest()
         {
-            var factory = new TriangleFactory();
-            var a = 3d;
-            var b = 4d;
-            var c = 5d;
-            var triangle = factory.CreateTriangle(a, b, c) as Triangle<double>;
-            
-            Assert.IsTrue(triangle.HasRightAngle());
+            _figureFactoryfactory = new FigureFactory();
         }
         
         [TestMethod]
-        public void Should_TriangleHasRightAngleReturnFalse_When_TriangleNotHasRightAngle()
+        public void Should_VisitorIsConfirmedBeTrue_When_TriangleAcceptVisitorTheoremBackPythagorean()
         {
-            var factory = new TriangleFactory();
+            var a = 3d;
+            var b = 4d;
+            var c = 5d;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var pythagoreanTheorem = new VisitorTheoremBackPythagorean(1e-2);
+            triangle.Accept(pythagoreanTheorem);
+            
+            Assert.IsTrue(pythagoreanTheorem.IsConfirmed);
+        }
+        
+        [TestMethod]
+        public void Should_VisitorIsConfirmedBeFalse_When_TriangleAcceptVisitorTheoremBackPythagorean()
+        {
             var a = 4d;
             var b = 4d;
             var c = 4d;
-            var triangle = factory.CreateTriangle(a, b, c) as Triangle<double>;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var visitorTheorem = new VisitorTheoremBackPythagorean(1e-2);
+            triangle.Accept(visitorTheorem);
             
-            
-            Assert.IsFalse(triangle.HasRightAngle());
+            Assert.IsFalse(visitorTheorem.IsConfirmed);
+        }
+        
+        [TestMethod]
+        public void Should_VisitorIsConfirmedBeTrue_When_TriangleAcceptVisitorThoeremByInnerOuterRadius()
+        {
+            var a = 3d;
+            var b = 4d;
+            var c = 5d;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var visitorTheorem = new VisitorTheoremByInnerOuterRadius(1e-2);
+            triangle.Accept(visitorTheorem);
+           
+            Assert.IsTrue(visitorTheorem.IsConfirmed);
         }
     }
 }
