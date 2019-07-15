@@ -1,3 +1,4 @@
+using calculator.primitive.visitors;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace calculator.primitive.implementation.factory.tests
@@ -14,29 +15,42 @@ namespace calculator.primitive.implementation.factory.tests
         }
         
         [TestMethod]
-        public void Should_TriangleHasRightAngleReturnTrue_When_TriangleHasRightAngle()
+        public void Should_VisitorIsConfirmedBeTrue_When_TriangleAcceptVisitorTheoremBackPythagorean()
         {
             var a = 3d;
             var b = 4d;
             var c = 5d;
             var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
-            var visitorTheorem = new PythagoreanTheorem(1e-2);
-            triangle.Accept(visitorTheorem);
+            var pythagoreanTheorem = new VisitorTheoremBackPythagorean(1e-2);
+            triangle.Accept(pythagoreanTheorem);
             
-            Assert.IsTrue(visitorTheorem.IsConfirmed);
+            Assert.IsTrue(pythagoreanTheorem.IsConfirmed);
         }
         
         [TestMethod]
-        public void Should_TriangleHasRightAngleReturnFalse_When_TriangleNotHasRightAngle()
+        public void Should_VisitorIsConfirmedBeFalse_When_TriangleAcceptVisitorTheoremBackPythagorean()
         {
             var a = 4d;
             var b = 4d;
             var c = 4d;
             var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
-            var visitorTheorem = new PythagoreanTheorem(1e-2);
+            var visitorTheorem = new VisitorTheoremBackPythagorean(1e-2);
             triangle.Accept(visitorTheorem);
             
             Assert.IsFalse(visitorTheorem.IsConfirmed);
+        }
+        
+        [TestMethod]
+        public void Should_VisitorIsConfirmedBeTrue_When_TriangleAcceptVisitorThoeremByInnerOuterRadius()
+        {
+            var a = 3d;
+            var b = 4d;
+            var c = 5d;
+            var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
+            var visitorTheorem = new VisitorTheoremByInnerOuterRadius(1e-2);
+            triangle.Accept(visitorTheorem);
+            
+            Assert.IsTrue(visitorTheorem.IsConfirmed);
         }
     }
 }

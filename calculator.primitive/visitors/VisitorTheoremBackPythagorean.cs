@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
 
-namespace calculator.primitive
+namespace calculator.primitive.visitors
 {
-    public class PythagoreanTheorem : VisitorHasRightAngle
+    public class VisitorTheoremBackPythagorean : VisitorTheorem
     {
-        public PythagoreanTheorem(double tolerance = Double.Epsilon)
+        public VisitorTheoremBackPythagorean(double tolerance = Double.Epsilon)
         {
             _isConfirmed = false;
             _tolerance = tolerance;
@@ -16,7 +16,7 @@ namespace calculator.primitive
             get { return _isConfirmed; }
         }
 
-        public override void HasRightAngle(Triangle t)
+        public override void Visit(Triangle t)
         {
             var side = new[] { t.A, t.B, t.C };
             var quads = side.Select(_ => _ * _).ToList();
