@@ -2,16 +2,24 @@ using System;
 
 namespace calculator.primitive
 {
-    public class FigureFactory
+    public class FigureFactory<TMeasure>
     {
-        public Circle CreateCircle(double radius)
+        protected AreaContextFactory<TMeasure> _areaContextFactory;
+        protected AreaComputeStrategyFactory<TMeasure> _areaComputeStrategyFactory;
+        
+        public virtual FigureBase<TMeasure> CreateCircle(TMeasure radius)
         {
-            return new Circle(radius);
+            throw new NotImplementedException();
         }
         
-        public Triangle CreateTriangle(double a, double b, double c)
+        public virtual FigureBase<TMeasure> CreateEllipse(TMeasure a, TMeasure b)
         {
-            return new Triangle(a, b, c);
+            throw new NotImplementedException();
+        }
+        
+        public virtual FigureBase<TMeasure> CreateTriangle(TMeasure a, TMeasure b, TMeasure c)
+        {
+            throw new NotImplementedException();
         }
     }
 }
