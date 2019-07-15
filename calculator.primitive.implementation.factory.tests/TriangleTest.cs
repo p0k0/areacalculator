@@ -49,7 +49,7 @@ namespace calculator.primitive.implementation.factory.tests
             var triangle = _figureFactoryfactory.CreateTriangle(a, b, c);
             var visitorTheorem = new VisitorTheoremByInnerOuterRadius(1e-2);
             triangle.Accept(visitorTheorem);
-            
+           
             Assert.IsTrue(visitorTheorem.IsConfirmed);
         }
     }
