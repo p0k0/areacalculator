@@ -28,6 +28,7 @@ namespace calculator.primitive.implementation.factory.tests
             var c = 4d;
             var triangle = factory.CreateTriangle(a, b, c) as Triangle<double>;
             
+            
             Assert.IsFalse(triangle.HasRightAngle());
         }
     }
